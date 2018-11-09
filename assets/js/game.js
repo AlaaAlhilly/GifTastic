@@ -3,9 +3,13 @@ $(document).ready(function(){
     var ch ,x,item;
     var buttonsArr = ["funny cat","dog","hot","funny"];
     var i;
-    for(i=0;i<buttonsArr.length;i++){
-        $(".buttons").append('<button id="'+i+'" type="button" class="btn btn-success giff" style="margin-left:10px;">' + buttonsArr[i] + '</button>');
+    function fill(){
+        $('.buttons').empty();
+        for(i=0;i<buttonsArr.length;i++){
+            $(".buttons").append('<button id="'+i+'" type="button" class="btn btn-success giff" style="margin-left:10px;">' + buttonsArr[i] + '</button>');
+        }
     }
+    fill();
     $('.addgiffs').click(function(){
         var gif = $('#giffyreq').val();
         if(gif.trim() == ""){
@@ -13,7 +17,7 @@ $(document).ready(function(){
             return false;
         }
         buttonsArr.push(gif.trim());
-        $(".buttons").append('<button id="'+(i++)+'" type="button" class="btn btn-success giff" style="margin-left:10px;">' + gif.trim() + '</button>');
+        fill();
         $('#giffyreq').val('');
     });
     
@@ -32,8 +36,9 @@ $(document).ready(function(){
         }).then(function (response) {
             console.log(response);
             for(var i =0;i<10;i++){
-                $('.imgs').append('<div class="imgdiv"><img class="imges" alt="true" id="'+i+'"'+'src="' + response.data[i].images.fixed_height_still.url + '"/><h4 class="text-center">Rating: '+response.data[i].rating+'</h4></div>');
+                $('.imgs').append('<div class="imgdiv"><img class="imges" alt="true" id="'+i+'"'+'src="' + response.data[i].images.fixed_height_still.url + '"/><h4 id="rate" class="text-center">Rating: '+response.data[i].rating+'</h4></div>');
             }
+            $('.imgs').css('display','block');
             $('img').click(function(){
                 var id = parseInt($(this).attr('id'));
                 var alt = $(this).attr('alt');
