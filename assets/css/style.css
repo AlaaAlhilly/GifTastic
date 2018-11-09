@@ -32,7 +32,7 @@
 .imgs{
     background: url(../images/sky.jpg);
     background-size: 100%;
-    height: 600px;
+    height: 550px;
     display: none;
 }
 #rate{
