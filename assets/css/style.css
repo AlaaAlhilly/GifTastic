@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background: url(../images/body.jpg);
+    background-size: 100%;
+}
 .jumbotron{
     background: url(../images/banner.jpg);
     background-size: 100%;
