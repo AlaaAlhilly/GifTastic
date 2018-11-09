@@ -6,7 +6,7 @@ $(document).ready(function(){
     function fill(){
         $('.buttons').empty();
         for(i=0;i<buttonsArr.length;i++){
-            $(".buttons").append('<button id="'+i+'" type="button" class="btn btn-success giff" style="margin-left:10px;">' + buttonsArr[i] + '</button>');
+            $(".buttons").append('<a class="fancy-button bg-gradient1"><span>' + buttonsArr[i] + '</span></a>');
         }
     }
     fill();
@@ -26,7 +26,9 @@ $(document).ready(function(){
         $('#giffyreq').val('');
     });
     
-    $('.buttons').on('click','.giff',function(){
+    $('.buttons').on('click','a',function(e){
+        alert();
+        e.preventDefault();
         $('.imgs').empty();
         if($(this).text().includes(" ")){
             item = $(this).text().replace(/\s/g,'+');
