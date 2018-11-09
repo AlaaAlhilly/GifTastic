@@ -235,7 +235,7 @@ a{
 /* bubbles source (https://codepen.io/bh/pen/JBlCc) */
 html,
 body {
-  height: 100%;
+  height: 50%;
 }
 /* 
 body {
@@ -272,7 +272,7 @@ body {
 
 .bubble-container {
   position: absolute;
-  bottom: 0;
+  bottom: 100px;
   will-change: transform;
   -webkit-animation: bubblerise 4s infinite ease-in;
   -moz-animation: bubblerise 4s infinite ease-in;
