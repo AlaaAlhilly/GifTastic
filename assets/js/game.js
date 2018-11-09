@@ -27,7 +27,6 @@ $(document).ready(function(){
     });
     
     $('.buttons').on('click','a',function(e){
-        alert();
         e.preventDefault();
         $('.imgs').empty();
         if($(this).text().includes(" ")){
