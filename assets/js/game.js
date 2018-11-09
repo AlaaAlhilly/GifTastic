@@ -12,6 +12,7 @@ $(document).ready(function(){
     fill();
     $('.addgiffs').click(function(){
         if(buttonsArr.includes($('#giffyreq').val().trim())){
+            $('#giffyreq').val('');
             alert("it's already there.");
             return false;
         }
