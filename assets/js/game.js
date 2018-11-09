@@ -11,6 +11,10 @@ $(document).ready(function(){
     }
     fill();
     $('.addgiffs').click(function(){
+        if(buttonsArr.includes($('#giffyreq').val().trim())){
+            alert("it's already there.");
+            return false;
+        }
         var gif = $('#giffyreq').val();
         if(gif.trim() == ""){
             alert("Enter something in the field");
